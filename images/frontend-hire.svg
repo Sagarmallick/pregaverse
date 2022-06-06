@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78">
+  <g id="frontend" transform="translate(-1321.432 -5997.623)">
+    <circle id="Ellipse_74" data-name="Ellipse 74" cx="39" cy="39" r="39" transform="translate(1321.432 5997.623)" fill="#fff"/>
+    <g id="Ellipse_83" data-name="Ellipse 83" transform="translate(1328.432 6004.623)" fill="#dd0031" stroke="#dd0031" stroke-width="2">
+      <circle cx="32" cy="32" r="32" stroke="none"/>
+      <circle cx="32" cy="32" r="31" fill="none"/>
+    </g>
+    <g id="Group_703" data-name="Group 703" transform="translate(-2355.395 186.482)">
+      <path id="Path_1645" data-name="Path 1645" d="M3532.551,5233.355l18.151-6.423,17.975,6.718-2.77,23.691-15.2,8.427-15.5-8.427Z" transform="translate(165.213 603.791)" fill="#fc5177"/>
+      <path id="Path_1646" data-name="Path 1646" d="M3724,5652.932l.056,38.831,15.263-8.45,2.729-23.685Z" transform="translate(-8.173 177.791)" fill="#c3002f"/>
+      <text id="A" transform="translate(3707.058 5855.695)" fill="#fff" font-size="23" font-family="FuturaStd-Book, Futura Std"><tspan x="0" y="0">A</tspan></text>
+    </g>
+  </g>
+</svg>

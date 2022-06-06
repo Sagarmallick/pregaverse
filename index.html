@@ -1,0 +1,1213 @@
+<!-- VERSION WORK  -->
+<!DOCTYPE html>                        
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BE-MOM</title>
+    <meta name="description" content="QUokka Labs">
+    <meta name="keywords" content="Quokka Labs">
+
+    <!-- ********** TAILWIND CSS STYLE BUNDLE START *********-->
+    <link rel="stylesheet" href="css/output.css">
+    <!-- ********** - TAILWIND CSS STYLE BUNDLE ENDS ********** -->
+
+    <!-- *********** -CUSTOM CSS STYLES START -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- *********** -CUSTOM CSS STYLE ENDS -->
+
+    <!-- *********** -Alpinejs cdn START -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/animation.css">
+
+    <style>
+        @font-face {
+            font-family: "Bebas-Neue";
+            src: url("./fonts/BebasNeue-Regular.ttf");
+            font-display: swap;
+        }
+
+        .in,
+        .ne {
+            font-family: 'Bebas-Neue';
+        }
+
+        @font-face {
+            font-family: "Gilroy-black";
+            src: url("./fonts/Gilroy-Black.ttf");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Gilroy-Bold";
+            src: url("./fonts/Gilroy-Bold.ttf");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Gilroy-Regular";
+            src: url("./fonts/Gilroy-Regular.ttf");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Gilroy-Medium";
+            src: url("./fonts/Gilroy-Medium.ttf");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Gilroy-SemiBold";
+            src: url("./fonts/Gilroy-SemiBold.ttf");
+            font-display: swap;
+        }
+
+        h1,
+        h2 {
+            font-family: "Gilroy-Black";
+        }
+
+        p {
+            font-family: "Gilroy-Regular";
+        }
+
+        a {
+            font-family: "Gilroy-SemiBold";
+        }
+
+        span {
+            font-family: "Gilroy-Bold";
+        }
+
+        label {
+            font-family: "Gilroy-Bold";
+        }
+
+        .Gilroy-SemiBold {
+            font-family: "Gilroy-SemiBold";
+
+        }
+
+        .Gilroy-Medium {
+            font-family: "Gilroy-Medium";
+        }
+
+        .Gilroy-Medium {
+            font-family: "Gilroy-Medium";
+        }
+
+        .Gilroy-Black {
+            font-family: "Gilroy-Black";
+        }
+
+        .similar-button {
+            background: rgba(255, 234, 255, 0.44);
+        }
+
+        .text-color-50plus {
+            color: #110437;
+
+        }
+
+        .Gilroy-Bold {
+            font-family: "Gilroy-Bold";
+        }
+
+        .Gilroy-Black {
+            font-family: "Gilroy-Black";
+        }
+
+        .Gilroy-Regular {
+            font-family: "Gilroy-Regular";
+        }
+
+        /* faq css starts */
+
+        label .arrow :after {
+            content: url(images/right-arrow-faq.svg);
+            position: absolute;
+            top: 22px;
+            right: -5px;
+            transition: 2s;
+        }
+
+        .veiw-arrow:after {
+            content: url(images/veiw-arrow.svg);
+            position: relative;
+            top: 4px;
+            right: -20px;
+            transition: 2s;
+        }
+
+        /* input:checked+label:after {
+            content: url(images/down-arrow-faq.svg);
+            line-height: .8em;
+            transition: 2s;
+        } */
+
+        .accordion__content {
+            max-height: 0em;
+            transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+        }
+
+        input[name='panel']:checked~.accordion__content {
+            /* Get this as close to what height you expect */
+            max-height: 50em;
+        }
+
+        /* faq css ends */
+
+        /* HEADER MOBILE ARROW ANIMATION */
+
+        #label-mobo-mini:after {
+            content: url(images/right-arrow-mini.svg);
+            position: absolute;
+            top: 15px;
+            right: 0px;
+            transition: 2s;
+        }
+
+        input:checked+#label-mobo-mini:after {
+            content: url(images/down-arrow-mini.svg);
+            line-height: .8em;
+            transition: 2s;
+        }
+
+
+        /* HEADER MOBILE ARROW ANIMATION END*/
+
+
+        /* swiper-slide css starts*/
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            height: auto;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-button-next:after,
+        .swiper-rtl .swiper-button-prev:after {
+            content: '';
+        }
+
+        .swiper-button-prev:after,
+        .swiper-rtl .swiper-button-next:after {
+            content: '';
+        }
+
+
+        .swiper-button-next {
+            position: absolute;
+            top: 20%;
+            width: calc(var(--swiper-navigation-size)/ 44 * 27);
+            height: var(--swiper-navigation-size);
+            margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+            z-index: 10;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--swiper-navigation-color, var(--swiper-theme-color));
+        }
+
+        .swiper-button-prev {
+            position: absolute;
+            top: 20%;
+            left: 88rem;
+            width: calc(var(--swiper-navigation-size)/ 44 * 27);
+            height: var(--swiper-navigation-size);
+            margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+            z-index: 10;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--swiper-navigation-color, var(--swiper-theme-color));
+        }
+
+        @media screen and (max-width: 480px) {
+            .swiper-button-prev {
+                left: 15rem;
+                top: 5rem;
+            }
+
+            .swiper-button-next {
+                top: 5rem;
+            }
+        }
+
+        /* swiper-slide css ends */
+    </style>
+</head>
+
+<body>
+    <div class="body-container">
+        <!-- NAVIGATION BAR SECTION  -->
+        <section>
+            <div class="navbar-wrapper">
+                <!-- NAVIGATION BAR SECTION START  -->
+                <div class="sticky  z-50  xl:top-0 bg-white shadow-md m-2">
+                    <div class="max-w-7xl mx-auto  sm:px-6 xl:px-24 xl:max-w-full" id="openmenu">
+                        <div
+                            class="flex justify-between items-center px-6 xl:px-0 py-4 md:justify-between md:space-x-10">
+                            <div class="flex justify-start lg:w-0 lg:flex-1 xl:h-[1.8rem]">
+                             <img src="./image/pregalogo.png" alt="" style="width: 94px;
+                             height: 40px;
+                         "/>
+                            </div>
+                            <div class="-mr-2 -my-2 lg:hidden">
+                                <button type="button" onclick="openmenu()"
+                                    class=" rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                                    aria-expanded="false">
+                                    <span class="sr-only">Open menu</span>
+                                    <!-- Heroicon name: outline/menu -->
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <nav class="hidden sm:hidden md:hidden lg:flex space-x-10 items-center">
+                                <button href="#"
+                                class="text-base  font-medium flex items-center bg-transparent border border-black hover:rounded-full  px-8 py-2 text-black "> <img class="px-2" src="./image/Appstore.svg" alt="">App Store
+                            </button>
+                           
+                            <button href="#"
+                            class="text-base  font-medium flex items-center bg-transparent border border-black hover:rounded-full  px-8 py-2 text-black "><img class="px-2" src="./image/Playstore.svg" alt="">Google Play
+                        </button>
+                            </nav>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+                        style="display: none;" id="close-menu">
+                        <div
+                            class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                            <div class="pt-5 pb-6 px-5">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h1>Pregaverse</h1>
+                                    </div>
+                                    <div class="-mr-2">
+                                        <button type="button" onclick="closemenu()"
+                                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                            <span class="sr-only">Close menu</span>
+                                            <!-- Heroicon name: outline/x -->
+                                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mt-6">
+                                    <nav class="grid gap-y-4">
+                                        <!-- Service TAP MOBILE  -->
+                                        <div>
+                                            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                                <span class="ml-3 text-base font-medium text-gray-900">Service</span>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                                <span class="ml-3 text-base font-medium text-gray-900">Community</span>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                                <span class="ml-3 text-base font-medium text-gray-900">Policies</span>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                                <span class="ml-3 text-base font-medium text-gray-900">News</span>
+                                            </a>
+                                        </div>
+                                    </nav>
+                                </div>
+                                <div class="py-5 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
+                                    <a href="#"
+                                        class="Gilroy-Regular flex font-normal text-sm border-2  w-1/2
+                 justify-center rounded-full py-2 text-black border-black xl:mt-5  xl:w-2/5 xl:pl-0 xl:flex xl:items-center xl:rounded-[14.5rem]">Find
+                                        Let’s Connect</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </nav>
+                </div>
+                <!-- NAVIGATION BAR SECTION END  -->
+            </div>
+        </section>
+        <section class="relative">
+            <div class="h-1/2">
+                <div class="w-auto shadow-xl rounded-lg shadow-gray-100">
+                    <div class="flex flex-row  items-center">
+                        <div class="absolute xl:p-16 ">
+                            <div class="xl:w-2/3 p-6">
+                                <h1
+                                    class="pr-12 font-bold xl:leading-12 w-auto  text-2xl tracking-tight text-white  md:text-5xl md:pb-4 xl:text-5xl xl:block xl:pr-0">
+                                    We Provide The Care That You And Your
+                                    <span class="text-cheery-red-dim">Child </span>Deserves
+                                </h1>
+                                <h1
+                                    class="font-bold leading-10 w-auto text-3.5xl sm:text-3.5xl tracking-tight text-white  md:text-5xl pb-2 xl:text-5xl gap-3 xl:flex  xl:pr-40 ">
+
+
+                                </h1>
+                                <a href="#"
+                                    class="Gilroy-Regular flex font-normal text-sm border-2  w-1/3 justify-center rounded-full py-2 xl:py-3 text-white hover:bg-white hover:text-violet-900 hover:border-peach-light xl:mt-5  xl:w-2/5 xl:pl-0 xl:flex xl:items-center xl:rounded-[14.5rem]">Find
+                                    Your Doctor</a>
+                                <div class="flex items-center  xl:flex my-5  xl:px-0  px-5 xl:mt-7">
+                                    <p class="text-white text-xs mx-1 xl:text-tiny">Our rating in india</p>
+                                    <picture class="mx-1">
+                                        <source media="(max-width: 456px)" srcset="image/star-yellow.webp" />
+                                        <source media="(min-width: 457px)" srcset="image/star-yellow-big.webp" />
+                                        <img loading="lazy" class="" src="image/star-yellow.webp" alt="rating star" />
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                        <img loading="lazy" src="./image/main-bannerwork.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container xl:pt-32 xl:px-40">
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-10">
+                    <div class="px-9 pt-8 pb-8 text-center border-gray-200 hover:shadow-lg border shadow-xl ">
+                        <img class="m-auto" src="./image/medical-team.png" alt="" width="60px">
+                        <h4 class="text-xl Gilroy-Bold leading-10 pt-2">Best Doctor</h4>
+                        <p class="leading-7">
+                            Even if you were pregnant before, each pregnancy is different and so it's important to see a doctor as soon as you know you're expecting. 
+                        </p>
+                    </div>
+                    <div class="px-9  pt-8 pb-8 text-center hover:shadow-lg border-gray-200 border shadow-xl  ">
+                        <img class="m-auto" src="./image/customer-service.png" alt="" width="60px">
+                        <h4 class="text-xl Gilroy-Bold leading-10 pt-2">24 Hours Service</h4>
+                        <p class="leading-7">
+                            Best 24/7 Emergency Care. Emergencies can happen anytime, at Specialist Hospital, we have ensured that we are available for you during those times. 
+                        </p>
+                    </div>
+                    <div class="px-9  pt-8 pb-8 text-center hover:shadow-lg border-gray-200 border shadow-xl  ">
+                        <img class="m-auto" src="./image/siren.png" alt="" width="60px">
+                        <h4 class="text-xl Gilroy-Bold leading-10 pt-2">Need Emergency</h4>
+                        <p class="leading-7">
+                            A special emergency feature that helps you notify any of your 3 family members whenever you are expecting. It helps your loved ones to stay connected with you even when they are not present around.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="tital-wrapper text-center xl:pt-12">
+                <h2 class="text-4xl Gilroy-SemiBold xl:leading-8">WHY PREGAVERSE?
+                </h2>
+                <img class="m-auto" src="./image/floral-design-with-curled-edges.png" alt="" width="100px">
+                <p class="text-xl m-auto Gilroy-Regular pb-6 xl:px-28 opacity-70 xl:w-2/3">THE SOLUTION OUR PRODUCT OFFERs</p>
+            </div>
+            <div class="wrapper xl:px-36">
+                <div class="grid grid-cols-1 xl:grid-cols-3 xl:gap-16">
+                    <div class="tital-wrapper xl:pt-12 col-span-2 p-6 xl:px-20 bg-carrot text-white shadow-xl">
+                        <h2 class="xl:text-4xl text-2xl Gilroy-SemiBold xl:leading-10">Our App is a health care alternative providing pregnant patients with specialized medical care</h2>
+                        <p class="text-xl m-auto Gilroy-Regular py-6  opacity-70">We wanted to build a project that wants to create and serve a community of women who are about to discover the beautiful phase of motherhood.</p> 
+                        <p class="text-xl m-auto Gilroy-Regular   opacity-70">In PREGAVERSE we not only offer guidance that helps you with the health of you and your new one, but also a one on one consultation with experts who help you with any complications or doubts you have.</p> 
+                       
+                    </div>
+                    <div class="table-wrapper">
+                        <div class="card-wrapper bg-blue-royal">
+                            <div class="tital-wrapper p-8 xl:pt-12 ">
+                                <h2 class="text-4xl Gilroy-SemiBold xl:leading-8 pb-8 text-white">Weekly Timetable</h2>
+                                <div class="table-wrapper text-white shadow-xl">
+                                    <ul class="leading-10">
+                                        <li class="flex justify-between border border-dashed my-2 px-2">
+                                            <p>Monday</p>
+                                            <p>8:00am-10.00pm</p>
+                                        </li>
+                                        <li class="flex justify-between border border-dashed my-2 px-2">
+                                            <p>Tuesday</p>
+                                            <p>8:00am-10.00pm</p>
+                                        </li>
+                                        <li class="flex justify-between border border-dashed my-2 px-2">
+                                            <p>Wednesday</p>
+                                            <p>8:00am-10.00pm</p>
+                                        </li>
+                                        <li class="flex justify-between border border-dashed my-2 px-2">
+                                            <p>Thusday</p>
+                                            <p>8:00am-10.00pm</p>
+                                        </li>
+                                        <li class="flex justify-between border border-dashed my-2 px-2">
+                                            <p>Fridayday</p>
+                                            <p>8:00am-10.00pm</p>
+                                        </li>
+                                        <li class="flex justify-between border border-dashed my-2 px-2">
+                                            <p>Saturday</p>
+                                            <p>8:00am-10.00pm</p>
+                                        </li>
+                                        <li class="flex justify-between border border-dashed my-2 px-2">
+                                            <p>Sunday</p>
+                                            <p>8:00am-10.00pm</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="tital-wrapper text-center xl:pt-12">
+                <h2 class="text-4xl Gilroy-SemiBold xl:leading-8">Our Department</h2>
+                <img class="m-auto" src="./image/floral-design-with-curled-edges.png" alt="" width="100px">
+                <p class="text-xl m-auto Gilroy-Regular pb-6 xl:px-28 opacity-70 w-2/3 text-blue-royal">THE SOLUTION OUR PRODUCT OFFERs</p>
+            </div>
+            <div class="tab-wrapper xl:px-16">
+                <div class="rounded w-full mx-auto pt-3  shadow-xl">
+                    <!-- Tabs -->
+                    <ul id="tabs" class="inline-flex gap-4 pt-2 px-1 xl:mx-4 w-full  text-center">
+                      <li class=" text-white hover:bg-cheery-red bg-blue-royal px-4  font-semibold py-2 rounded border -mb-px w-32" style="border-radius: 50%;
+                      width: 100px;
+                      height: 100px;"><img class="m-auto"  src="./image/diet.png" alt="" width="40px"><a class="" id="default-tab" href="#first">
+                              Diet
+                      </a></li>
+                      <li class="px-4 text-white hover:bg-cheery-red bg-blue-royal  font-semibold py-2 border rounded w-32 " style="border-radius: 50%;
+                      width: 100px;
+                      height: 100px;"><img class="m-auto"  src="./image/capsules.png" alt="" width="40px"><a href="#second">Meds</a></li>
+                      <li class="px-4 text-white hover:bg-cheery-red bg-blue-royal  font-semibold py-2 border rounded w-32"style='border-radius: 50%;
+                      width: 100px;
+                      height: 100px;'><img class="m-auto"  src="./image/meditation.png" alt="" width="40px"><a href="#third">Exercise</a></li>
+                      <li class="px-4 text-white hover:bg-cheery-red bg-blue-royal  font-semibold py-2 border rounded w-32" style="border-radius: 50%;
+                      width: 100px;
+                      height: 100px;"><img class="m-auto" src="./image/music-notes.png" alt="" width="40px"><a href="#fourth">Music</a></li>
+                    </ul>
+                 
+                    <!-- Tab Contents -->
+                    <div id="tab-contents">
+                      <div id="first" class="p-4">
+                        <div class="content-wrapper">
+                            <div class="grid grid-cols-1 xl:grid-cols-3">
+                                <div class="tital-wrapper xl:pt-12 px-6 xl:px-20 col-span-2">
+                                    <h2 class="xl:text-4xl text-2xl Gilroy-SemiBold xl:leading-10">Our App is a health care institution providing pregnant patient with specialized medical</h2>
+                                    <p class="text-xl m-auto Gilroy-Regular py-6  opacity-70">A healthy diet is an important part of a healthy lifestyle at any time, but especially vital if you're pregnant or planning a pregnancy. Healthy eating keeps you feeling good and gives your baby the essential nutrients they need in the womb.</p> 
+                               
+                                </div>
+                                <div class="phone-graphic absolute">
+                                    <div class="phone-case">
+                                        <div class="phone-container-outer">
+                                            <div class="phone-container-inner">
+                                                <div class="phone-header">
+                                                    <img src="./image/dietheader.svg" alt="">
+                                                </div>
+                                                <div class="phone-messages">
+                                                    <div class="message message-you">
+                                                        <img src="./image/vegtoggle.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact">
+                                                        <img src="./image/monday.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-you">
+                                                        <img src="./image/tuesday.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact">
+                                                        <img src="./image/wednesday.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-you">
+                                                        <img src="./image/thusday.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact-1">
+                                                        <img src="./image/friday.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact-2">
+                                                        <img src="./image/saturday.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact-3">
+                                                        <img src="./image/sunday.svg" alt="">
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="phone-footer">
+                                                    <div class="phone-footer-icons"><span class="material-icons">photo_camera</span></div>
+                                                    <div class="phone-footer-input">
+                                                        <p>Text Message</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div id="second" class="hidden p-4">
+                        <div class="content-wrapper">
+                            <div class="grid grid-cols-1 xl:grid-cols-3">
+                                <div class="tital-wrapper xl:pt-12 px-6 xl:px-20 col-span-2">
+                                    <h2 class="xl:text-4xl text-2xl Gilroy-SemiBold xl:leading-10">Our App is a health care institution providing Pragnet patient with specialized medical</h2>
+                                    <p class="text-xl m-auto Gilroy-Regular py-6  opacity-70">Research have suggested that meditation can help during pregnancy. Not only does cultivating moment-to-moment awareness of thoughts and surroundings seem to help pregnant women keep their stress down and their spirits up. It may also lead to healthier newborns with fewer developmental problems down the line.</p> 
+                                     
+                                </div>
+                                <div class="phone-graphic absolute">
+                                    <div class="phone-case">
+                                        <div class="phone-container-outer">
+                                            <div class="phone-container-inner">
+                                                <div class="phone-header">
+                                                    <img src="./image/medication-banner.svg" alt="">
+                                                </div>
+                                                <div class="phone-messages">
+                                                    <div class="message message-you">
+                                                        <img src="./image/video-1.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact">
+                                                        <img src="./image/video-2.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-you">
+                                                        <img src="./image/video-3.svg" alt="">
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="phone-footer">
+                                                    <div class="phone-footer-icons"><span class="material-icons">photo_camera</span></div>
+                                                    <div class="phone-footer-input">
+                                                        <p>Text Message</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div id="third" class="hidden p-4">
+                        <div class="content-wrapper">
+                            <div class="grid grid-cols-1 xl:grid-cols-3">
+                                <div class="tital-wrapper xl:pt-12 px-6 xl:px-20 col-span-2">
+                                    <h2 class="xl:text-4xl text-2xl Gilroy-SemiBold xl:leading-10">Our App is a health care institution providing Pragnet patient with specialized medical</h2>
+                                    <p class="text-xl m-auto Gilroy-Regular py-6  opacity-70">Maintaining a regular exercise routine throughout your pregnancy can help you stay healthy and feel your best. Regular exercise during pregnancy can improve your posture and decrease some common discomforts such as backaches and fatigue.</p> 
+                                   
+                                </div>
+                                <div class="phone-graphic absolute">
+                                    <div class="phone-case">
+                                        <div class="phone-container-outer">
+                                            <div class="phone-container-inner">
+                                                <div class="phone-header">
+                                                    <img src="./image/exercise-bannar.svg" alt="">
+                                                </div>
+                                                <div class="phone-messages">
+                                                    <div class="message message-you">
+                                                        <img src="./image/video-1.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact">
+                                                        <img src="./image/video-2.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-you">
+                                                        <img src="./image/video-3.svg" alt="">
+                                                    </div>
+
+                                                </div>
+                                                <div class="phone-footer">
+                                                    <div class="phone-footer-icons"><span class="material-icons">photo_camera</span></div>
+                                                    <div class="phone-footer-input">
+                                                        <p>Text Message</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div id="fourth" class="hidden p-4">
+                        <div class="content-wrapper">
+                            <div class="grid grid-cols-1 xl:grid-cols-3">
+                                <div class="tital-wrapper xl:pt-12 px-6 xl:px-20 col-span-2">
+                                    <h2 class="xl:text-4xl text-2xl Gilroy-SemiBold xl:leading-10">Our App is a health care institution providing Pragnet patient with specialized medical</h2>
+                                    <p class="text-xl m-auto Gilroy-Regular py-6  opacity-70">Even if you were pregnant before, each pregnancy is different and so it's important to see a doctor as soon as you know you're expecting. The Gynecologist not only takes care of you but your baby as well. An expert who has the knowledge and the expertise to guide you during the wonderful period. </p> 
+                                
+                                </div>
+                                <div class="phone-graphic absolute">
+                                    <div class="phone-case">
+                                        <div class="phone-container-outer">
+                                            <div class="phone-container-inner">
+                                                <div class="phone-header">
+                                                    <img src="./image/music-banner.svg" alt="">
+                                                </div>
+                                                <div class="phone-messages">
+                                                    <div class="message message-you">
+                                                        <img src="./image/music.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact">
+                                                        <img src="./image/music.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-you">
+                                                        <img src="./image/music.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact">
+                                                        <img src="./image/music.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-you">
+                                                        <img src="./image/music.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact-1">
+                                                        <img src="./image/music.svg" alt="">
+                                                    </div>
+                                                    <div class="message message-contact-2">
+                                                        <img src="./image/music.svg" alt="">
+                                                    </div>
+                                                  
+
+
+                                                </div>
+                                                <div class="phone-footer">
+                                                    <div class="phone-footer-icons"><span class="material-icons">photo_camera</span></div>
+                                                    <div class="phone-footer-input">
+                                                        <p>Text Message</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+          <!-- our client section starts -->
+    <section class="my-14 relative">
+        <div class="xl:mx-32 lg:mx-28">
+            <h2 class="text-2xl xl:text-4xl px-6 text-center pt-16 leading-8 text-color-50plus">What our Patient Say
+            </h2>
+            <p class="px-6 text-center py-4 xl:text-xl text-gray-500 pt-6 xl:px-28 lg:px-32">Our goal is to create a
+                service that you’re satisfied with and use every day. This is why we’re constantly working on our services to make them better every day
+                and really listen to what our users have to say.</p>
+            <div class="swiper mySwiper mx-4 xl:mx-12 w-80 block">
+                <div class="swiper-wrapper py-12 ">
+                    <div class="swiper-slide flex flex-col xl:px-3">
+                        <div class="w-auto px-4 py-10 shadow-xl rounded-lg shadow-gray-100">
+                            <div class="flex flex-row  items-center">
+                                <img loading="lazy"src="image/profile.png" alt="" style="width: 60px; ">
+                                <div class="pl-2">
+                                    <h2 class="text-md text-indigo-900">Fransis Jera</h2>
+                                    <p class="text-sm">SEIDCO Communications</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="text-sm pt-5">The team delivered a stable app ahead of deadlines,
+                                    communicating effectively with the internal
+                                    team. Quokka Labs treated the project as if it were their own. The team delivered a
+                                    stable app ahead of deadlines, communicating effectively with the internal.</p>
+                            </div>
+
+                         
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex flex-col px-3">
+                        <div class="w-auto px-4 py-10 shadow-xl rounded-lg shadow-gray-100">
+                            <div class="flex flex-row  items-center">
+                                <img loading="lazy"src="image/profile.png" alt="" style="width: 60px; ">
+                                <div class="pl-2">
+                                    <h2 class="text-md text-indigo-900">saurabh sharma</h2>
+                                    <p class="text-sm">Noida</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="text-sm pt-5">On behalf of my wife, who was a patient in your hospital, I humbly submit my sincere gratitude to the management and staff of Jamaica Hospital, especially to your outstanding nurses and PCAs. They have been outstandingly helpful and provided a high quality of service, care and comfort to my wife. Thank you.</p>
+                            </div>
+
+                       
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex flex-col px-3">
+                        <div class="w-auto px-4 py-10 shadow-xl rounded-lg shadow-gray-100">
+                            <div class="flex flex-row  items-center">
+                                <img loading="lazy"src="image/profile.png" alt="" style="width: 60px; ">
+                                <div class="pl-2">
+                                    <h2 class="text-md text-indigo-900">Fransis Jera</h2>
+                                    <p class="text-sm">Mumbai</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="text-sm pt-5">On behalf of my wife, who was a patient in your hospital, I humbly submit my sincere gratitude to the management and staff of Jamaica Hospital, especially to your outstanding nurses and PCAs. They have been outstandingly helpful and provided a high quality of service, care and comfort to my wife. Thank you.</p>
+                            </div>
+
+                   
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide flex flex-col px-3">
+                        <div class="w-auto px-4 py-10 shadow-xl rounded-lg shadow-gray-100">
+                            <div class="flex flex-row  items-center">
+                                <img loading="lazy"src="image/profile.png" alt="" style="width: 60px; ">
+                                <div class="pl-2">
+                                    <h2 class="text-md text-indigo-900">Shikha Singh</h2>
+                                    <p class="text-sm">Delhi</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="text-sm pt-5">On behalf of my wife, who was a patient in your hospital, I humbly submit my sincere gratitude to the management and staff of Jamaica Hospital, especially to your outstanding nurses and PCAs. They have been outstandingly helpful and provided a high quality of service, care and comfort to my wife. Thank you.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next mr-3">
+                    <img loading="lazy"src="images/client-icon-right-arrow.svg" alt="Right arrow, Icons">
+                </div>
+                <div class="swiper-button-prev ml-3">
+                    <img loading="lazy"src="images/client-icon-left-arrow.svg" alt="Left arrow, Icons">
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section>
+    <!-- our client section ends -->
+    
+    <!--CONTACT US START-->
+    <section class="h-auto bg-purple-white ">
+        <div class="container  xl:pt-6">
+            <div class="container">
+                <div class="grid grid-cols-1 xl:grid-cols-2">
+                    <div class="contact-wrapper xl:mr-16 -mb-16">
+
+                        <!-- CONTACT FORM  -->
+                        <form class="w-full sm:w-full p-6 xl:pl-24 xl:pr-12 bg-blue-royal text-white xl:relative xl:-top-16">
+                            <div class="tital-wrapper py-8 xl:py-14">
+                                <h2 class="text-2xl xl:text-4xl Gilroy-Bold ">Let’s Start a conversation!</h2>
+                                <span class="text-base xl:text-xl leading-8">Share your project ideas with us !
+                                </span>
+                            </div>
+                            <!-- FOAM 1ST SECTION  -->
+                            <div class="flex flex-wrap -mx-3">
+                                <div class="w-full xl:flex items-center mb-10 px-3 ">
+                                    <label class="block tracking-wide w-1/5 text-white text-sm font-bold mb-2"
+                                        for="grid-first-name">
+                                         Name 
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full  text-white placeholder-white border  rounded py-3 px-4 leading-tight bg-voilet-fade border-voilet-fade  focus:outline-none focus:border-gray-100"
+                                        id="grid-first-name" type="text" placeholder="Enter your name">
+
+                                </div>
+                                <div class="w-full xl:flex  items-center mb-10 px-3">
+                                    <label class="block text-white text-sm w-1/5 tracking-wide font-bold mb-2"
+                                        for="grid-password">
+                                        Email 
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full text-white placeholder-white  border bg-voilet-fade border-voilet-fade rounded py-3 px-4 leading-tight  focus:outline-none focus:border-gray-100"
+                                        id="grid-last-name" type="text" placeholder="Enter your email">
+                                </div>
+                            </div>
+                            <!-- FOAM 1ST SECTION ENDS  -->
+
+                            <!-- FOAM 2ST SECTION  -->
+                            <div class="flex flex-wrap -mx-3 ">
+                                <div class="w-full xl:flex px-3 items-center mb-10">
+                                    <label class="block tracking-wide text-white w-1/5 text-sm font-bold mb-2"
+                                        for="grid-password">
+                                        Contact
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full text-white placeholder-white bg-voilet-fade border border-voilet-fade rounded py-3 px-4 leading-tight focus:outline-none focus:border-gray-100"
+                                        id="grid-last-name" type="text" placeholder="Enter your Number">
+                                </div>
+                                <div class="w-full  px-3">
+                                    <div class="w-full xl:flex items-center mb-10">
+                                        <label class="block tracking-wide text-white w-1/5 text-sm font-bold mb-2"
+                                            for="grid-first-name">
+                                            Purpose
+                                        </label>
+                                        <div class="w-full">
+                                            <select
+                                                class="form-select appearance-none
+                                                                  block
+                                                                  w-full
+                                                                  px-3
+                                                                  py-1.5
+                                                                  text-base
+                                                                  font-normal
+                                                                  bg-white bg-clip-padding bg-no-repeat
+                                                                  border
+                                                                  rounded
+                                                                  transition
+                                                                  ease-in-out
+                                                                  Gilroy-Medium
+                                                                  m-0
+                                                                  focus:text-white focus:border-gray-100 focus:outline-none padding-select
+                                                                  text-white placeholder-white bg-voilet-fade border-voilet-fade 
+                                                                  "
+                                                aria-label="Default select example">
+                                                <option selected>Select your purpose</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FOAM 2ST SECTION ENDS  -->
+                            <div class="flex flex-wrap -mx-3 mb-6">
+                                <div class="w-full xl:flex items-center px-3 mb-10">
+                                    <label class="block tracking-wide text-white w-1/5 text-sm font-bold mb-2"
+                                        for="grid-password">
+                                        About
+                                    </label>
+                                    <textarea
+                                        class=" no-resize appearance-none block w-full text-white placeholder-white bg-voilet-fade border border-voilet-fade  rounded py-3 px-4 mb-3 leading-tight focus:outline-none  focus:border-gray-100 h-20 resize-none"
+                                        id="message" placeholder="Tell us about your product and your nearest plan on the design engagement"></textarea>
+                                </div>
+                            </div>
+                            <div class="md:flex md:items-center">
+                                <div class="md:w-full flex justify-end mb-32">
+                                    <button
+                                        class="shadow xl:w-83 w-full hover:bg-voilet-900 text-white border-2 font-bold py-4 xl:px-28 rounded"
+                                        type="button">
+                                        Contact Us
+                                    </button>
+                                </div>
+                               
+                            </div>
+                        </form>
+                    </div>
+                    <div class="contact-wrapper flex items-end">
+                        <div class="py-32">
+                            <div class="title-wrapper xl:py-6">
+                                <h2 class="text-2xl Gilroy-Bold text-blue-royal ">Talk to our expert for a better business perspective</h2>
+                                <span class="text-base leading-6 ">Feeling lost!! Book a slot and get answers to all your industry-relevant doubts</span>
+                               
+                            </div>
+                            <div class="xl:flex justify-between items-center pt-6">
+                                <div class="flex flex-row  items-center px-4">
+                                    <img class="rounded-full border-8 border-gray-800" loading="lazy" src="images/testimonialUser.svg" alt="alex" style="width: 100px; ">
+                                    <div class="pl-2">
+                                        <h2 class="Gilroy-Black">Sanchit</h2>
+                                        <p class="text-sm">Business Head</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="Gilroy-SemiBold text-blue-royal text-tiny pt-2">Sanchit@quokkalas.com</p>
+                                    <p class="Gilroy-SemiBold text-blue-royal text-tiny pt-2">+91 9501620330</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!--CONTACT US SECTION End-->
+    <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
+        <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
+          <div class="mr-12 hidden lg:block">
+            <span>Get connected with us on social networks:</span>
+          </div>
+          <div class="flex justify-center">
+            <a href="#!" class="mr-6 text-gray-600">
+              <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
+                class="w-2.5" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512">
+                <path fill="currentColor"
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                </path>
+              </svg>
+            </a>
+            <a href="#!" class="mr-6 text-gray-600">
+              <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+                class="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="currentColor"
+                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                </path>
+              </svg>
+            </a>
+            <a href="#!" class="mr-6 text-gray-600">
+              <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google"
+                class="w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+                <path fill="currentColor"
+                  d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z">
+                </path>
+              </svg>
+            </a>
+            <a href="#!" class="mr-6 text-gray-600">
+              <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"
+                class="w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor"
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+              </svg>
+            </a>
+            <a href="#!" class="mr-6 text-gray-600">
+              <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
+                class="w-3.5" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512">
+                <path fill="currentColor"
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                </path>
+              </svg>
+            </a>
+            <a href="#!" class="text-gray-600">
+              <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
+                class="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                <path fill="currentColor"
+                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="mx-6 py-10 text-center md:text-left">
+          <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="">
+              <h6 class="
+                  uppercase
+                  font-semibold
+                  mb-4
+                  flex
+                  items-center
+                  justify-center
+                  md:justify-start
+                ">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cubes"
+                  class="w-4 mr-3" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512">
+                  <path fill="currentColor"
+                    d="M488.6 250.2L392 214V105.5c0-15-9.3-28.4-23.4-33.7l-100-37.5c-8.1-3.1-17.1-3.1-25.3 0l-100 37.5c-14.1 5.3-23.4 18.7-23.4 33.7V214l-96.6 36.2C9.3 255.5 0 268.9 0 283.9V394c0 13.6 7.7 26.1 19.9 32.2l100 50c10.1 5.1 22.1 5.1 32.2 0l103.9-52 103.9 52c10.1 5.1 22.1 5.1 32.2 0l100-50c12.2-6.1 19.9-18.6 19.9-32.2V283.9c0-15-9.3-28.4-23.4-33.7zM358 214.8l-85 31.9v-68.2l85-37v73.3zM154 104.1l102-38.2 102 38.2v.6l-102 41.4-102-41.4v-.6zm84 291.1l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6zm240 112l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6z">
+                  </path>
+                </svg>
+                Tailwind ELEMENTS
+              </h6>
+              <p>
+                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor
+                sit amet, consectetur adipisicing elit.
+              </p>
+            </div>
+            <div class="">
+              <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                Products
+              </h6>
+              <p class="mb-4">
+                <a href="#!" class="text-gray-600">Angular</a>
+              </p>
+              <p class="mb-4">
+                <a href="#!" class="text-gray-600">React</a>
+              </p>
+              <p class="mb-4">
+                <a href="#!" class="text-gray-600">Vue</a>
+              </p>
+              <p>
+                <a href="#!" class="text-gray-600">Laravel</a>
+              </p>
+            </div>
+            <div class="">
+              <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                Useful links
+              </h6>
+              <p class="mb-4">
+                <a href="#!" class="text-gray-600">Pricing</a>
+              </p>
+              <p class="mb-4">
+                <a href="#!" class="text-gray-600">Settings</a>
+              </p>
+              <p class="mb-4">
+                <a href="#!" class="text-gray-600">Orders</a>
+              </p>
+              <p>
+                <a href="#!" class="text-gray-600">Help</a>
+              </p>
+            </div>
+            <div class="">
+              <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                Contact
+              </h6>
+              <p class="flex items-center justify-center md:justify-start mb-4">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home"
+                  class="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <path fill="currentColor"
+                    d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z">
+                  </path>
+                </svg>
+                New York, NY 10012, US
+              </p>
+              <p class="flex items-center justify-center md:justify-start mb-4">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope"
+                  class="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512">
+                  <path fill="currentColor"
+                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
+                  </path>
+                </svg>
+                info@example.com
+              </p>
+              <p class="flex items-center justify-center md:justify-start mb-4">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone"
+                  class="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512">
+                  <path fill="currentColor"
+                    d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z">
+                  </path>
+                </svg>
+                + 01 234 567 88
+              </p>
+              <p class="flex items-center justify-center md:justify-start">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="print"
+                  class="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512">
+                  <path fill="currentColor"
+                    d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z">
+                  </path>
+                </svg>
+                + 01 234 567 89
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center p-6 bg-gray-200">
+          <span>© 2021 Copyright:</span>
+          <a class="text-gray-600 font-semibold" href="https://tailwind-elements.com/">Pregaverse</a>
+        </div>
+      </footer>
+</body>
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true,
+        },
+        breakpoints: {
+
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            1299: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            1499: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+
+            1599: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+        },
+    });
+</script>
+
+
+<script>
+    function openmenu() {
+        document.getElementById("close-menu").style.display = "block"
+        document.getElementById("openmenu").style.display = "none"
+    }
+
+    function closemenu() {
+        document.getElementById("close-menu").style.display = "none"
+        document.getElementById("openmenu").style.display = "block"
+    }
+
+</script>
+<script>
+    let tabsContainer = document.querySelector("#tabs");
+
+let tabTogglers = tabsContainer.querySelectorAll("#tabs a");
+
+console.log(tabTogglers);
+
+tabTogglers.forEach(function(toggler) {
+  toggler.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    let tabName = this.getAttribute("href");
+
+    let tabContents = document.querySelector("#tab-contents");
+
+    for (let i = 0; i < tabContents.children.length; i++) {
+      
+      tabTogglers[i].parentElement.classList.remove("border-t", "border-r", "border-l", "-mb-px", "bg-white");  tabContents.children[i].classList.remove("hidden");
+      if ("#" + tabContents.children[i].id === tabName) {
+        continue;
+      }
+      tabContents.children[i].classList.add("hidden");
+      
+    }
+    e.target.parentElement.classList.add("border-t", "border-r", "border-l", "-mb-px", "bg-white");
+  });
+});
+
+</script>
+
+</html>

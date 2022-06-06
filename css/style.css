@@ -1,0 +1,145 @@
+
+/* ql button and animation  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* SIZE  */
+.text-3-5xl{
+font-size:2rem;
+}
+/* .text-sm10{
+  font-size: 00.625rem;  
+} */
+/* .text-sm-6{
+    font-size: 0.383rem;
+} */
+.max-w-screen-5xl {
+    max-width: 1678px;
+
+}
+ /* COLOR  */
+ .bg-voilet-900{
+    background-color: #5C3EB3;
+}
+.primary-color{
+    color: #5C3EB3;
+}
+.bg-top-talent{
+    background: linear-gradient(180deg, #4B2F9E 0%, #230A70 100%);
+}
+.border-primary-color{
+    border-color: 1px #5C3EB3;
+}
+
+.gredient-color{
+    background: linear-gradient(180.37deg, #5C3EB3 0.32%, rgba(92, 62, 179, 0.938355) 44.99%, rgba(92, 62, 179, 0.740341) 108.52%, rgba(92, 62, 179, 0.636043) 120.27%, rgba(92, 62, 179, 0.36748) 120.29%, rgba(92, 62, 179, 0) 121.8%, rgba(92, 62, 179, 0.693556) 121.8%, rgba(92, 62, 179, 0.253548) 121.8%, rgba(92, 62, 179, 0.494779) 121.8%);
+}
+.grdient-navbar{
+    background: linear-gradient(180.37deg, #5C3EB3 0.32%, rgb(92 62 178) 44.99%);
+}
+
+
+
+/* .text-redish-300{
+    color: #CE698B;
+} */
+/* .bg-offwhite{
+    background-color: #FBFBFD;
+} */
+.bg-offwhite-100{
+    background: rgba(5, 5, 5, 0.06);
+}
+
+/* .peach-light{
+    color: #E0E8B7;
+} */
+.peach-medium{
+    background: #FFF1F1;
+}
+.peach-lightest{
+    background: #FFF6F1;
+}
+
+.contact-negative{
+    height: 60rem;
+  }
+
+.Montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/* POSITION  */
+.inset-center {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+/* h1 > span{
+    font-family: 'Montserrat', sans-serif;
+} */
+
+
+.hire-top-talent h1 >span{
+    font-family: 'Gilroy-Bold', sans-serif;
+}
+
+
+
+/* ANIMATION  */
+
+#circle{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+#circle:before{
+    content: "";
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    border: 2px solid #c5ccda;
+    border-radius: 50%;
+    animation: ping 1s cubic-bezier(0,0,.2,1) infinite;
+}
+
+/* ql button and animation ends  */
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+
+/* ANIMATION  */
+
+/* NAVBAR LINK BOTTOM LINE ANIMATION START */
+.line-base:hover:after{
+    content: '';
+    background-color: #FF7C7C;
+    height: 2px;
+    width: 5rem;
+    bottom: 0rem;
+    position:absolute;
+    left: 0;
+}
+/* NAVBAR LINK BOTTOM LINE ANIMATION END  */
+
+/* FOOTER SOCIAL MEDIA ICON COLOR CHANGE START */
+.social-fillup:hover{
+background-color: #5C3EB3;
+
+}
+.social-fillup:hover .foot-hover{
+    fill: white !important;
+}
+/* FOOTER SOCIAL MEDIA ICON COLOR CHANGE END */
